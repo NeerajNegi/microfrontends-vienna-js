@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        .reveal section img {
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>MICRO FRONTENDS</h1>
+            <h3>WITH SINGLE PAGE APPLICATIONS</h3>
+
+            <p>
+                by Elias Dräxler
+            </p>
+            <small>Slides & Code @ <a href="https://github.com/twinformatics/microfrontends-vienna-js">github</a>
+            </small>
+
+            <aside class="notes">
+                Who has heard about Microfrontends?
+                Who uses microfrontends?
+            </aside>
+        </section>
+        <section>
+            <h2>Overview</h2>
+            <ul>
+                <li>What are Microfrontends</li>
+                <li>Why do we need Microfrontends</li>
+                <li>Different types of Microfrontend architecture</li>
+                <li>Example</li>
+                <li>Things to consider...</li>
+            </ul>
+        </section>
+        <section>
+            <section>
+                <h2>Microfrontend</h2>
+                <p>break down frontend monolith into features</p>
+                <p>multiple different approaches</p>
+            </section>
+            <section>
+                <h2>Server-Side Rendered Microfrontends</h2>
+                <p><a href="https://www.mosaic9.org">Project Mosaic</a></p>
+                <small>developed by Zalando</small>
+                <aside class="notes">
+                    Wont cover server side rendered microfrontends
+                    If you are interested, how to do this look at the Proejct Mosaic from Zalando
+                </aside>
+            </section>
+            <section>
+                <h2>Thoughtworks Technology Radar</h2>
+                <img class="stretch" data-src="resources/thoughtworks-technology-radar.png"></img>
+                <p>
+                    <small><a href="https://www.thoughtworks.com/radar/techniques">source</a></small>
+                </p>
+                <aside class="notes">
+                    Asessed technologies and rate them.
+
+                    Currently working at a project where we use some kind of a microfrontend approach.
+                    Stated writing my bachelor thesis I wanted to know what different options there are for frontend SPA
+                    architecture.
+
+                    Asses November 2016
+                    Trial March 2017
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Why are Microfrontends usefull </h2>
+            </section>
+            <section>
+                <ul>
+                    <li class="fragment fade-in-then-semi-out">Framework independent - no Framework lock in</li>
+                    <li class="fragment fade-in-then-semi-out">Each microfrontend has its own state</li>
+                    <li class="fragment fade-in-then-semi-out">Independent deployments</li>
+                    <li class="fragment fade-in-then-semi-out">No shared codebase or conflicts</li>
+                    <li class="fragment fade-in-then-semi-out">Time to market</li>
+                    <li class="fragment fade-in-then-semi-out">Cross-functional teams</li>
+                </ul>
+                <aside class="notes">
+                    Javascript frameworks are not easily interchangeable as they have diverged in capabilities (large
+                    projects become inflexible
+                    Each microfrontend has its own state -> immutability each app only knows its own state
+                    Independent deployments
+                    No shared codebase or conflicts
+                    Time to market
+                </aside>
+            </section>
+            <section>
+                <h2>Cross-functional teams</h2>
+                <p><strong>You build it, you run it</strong></p>
+                <div class="container fragment fade-in">
+                    <div class="col">
+                        <ul>
+                            <li class="fragment fade-in-then-semi-out">Full control over their features</li>
+                            <li class="fragment fade-in-then-semi-out">Choose the best framework for your needs</li>
+                            <li class="fragment fade-in">Vertical sliced teams</li>
+                        </ul>
+                    </div>
+                    <div class="col fragment fade-in">
+                        <img data-src="resources/vertical-slices.png">
+                    </div>
+                </div>
+                <aside class="notes">
+                    Cross functional Teams - You build it you run it
+                    Teams have full control over their features - can be deployed and maintained independently
+                    Each team can use whatever best suits their needs
+                    Vertical sliceses in teams
+
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Microfrontend Architecture approaches</h2>
+                <p>Thin global application layer</p>
+                <ul>
+                    <li>single framework</li>
+                    <li>multiple different frameworks</li>
+                    <ul>
+                        <li>Iframe approach</li>
+                        <li>single-spa framework</li>
+                        <li>Angular Elements</li>
+                    </ul>
+                </ul>
+                <aside class="notes">
+                </aside>
+            </section>
+            <section>
+                <h2>Single Framework</h2>
+                <lu>
+                    <li>Namespace attached state</li>
+                    <li>Framework dependent component library</li>
+                </lu>
+                <aside class="notes">
+                    each app has a namespace attached state, or seperate state
+                    One Framework dependent Component Library (Angular Material)
+                </aside>
+            </section>
+            <section>
+                <h2>Multiple Frameworks</h2>
+                <ul>
+                    <li>Webcomponent component library</li>
+                    <li>DOM is the API</li>
+                    <li>Teams can decide which framework to use</li>
+                </ul>
+                <div class="container">
+                    <div class="col">
+                        <img height="100px" data-src="resources/angular.png"></img>
+                    </div>
+                    <div class="col">
+                        <img height="100px" data-src="resources/react.png"></img>
+                    </div>
+                    <div class="col">
+                        <img height="100px" data-src="resources/vue.png"></img>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Iframe approach
+                    Single-spa
+                    React + Angular Elements
+                    Component Library written as Webcomponents (works with any framework)
+                    DOM is the API
+                    Each team has the choice to use the technology that best fits their needs, flexibility,
+                    Angular zone.js problems because of global window object pollution --> multiple versions of Angular
+                    are difficult.
+                </aside>
+            </section>
+        </section>
+        <section>
+            <h1>single-spa Example</h1>
+        </section>
+        <section>
+            <section>
+                <h2>Things to consider...</h2>
+                <ul>
+                    <li>Application size overhead</li>
+                    <ul>
+                        <li>caching</li>
+                    </ul>
+                    <li>Makes sense for big projects</li>
+                    <li>complex build & integration</li>
+                    <li>not the solution for every problem</li>
+                </ul>
+                <aside class="notes">
+                    Application size (Angular 6 + Angular Ivy) overhead
+                    Maybe Server-side rendering
+                    Caching
+                    To battle performance impacts
+                    Makes maybe sense for big projects with many developers to split it into vertical slices, but for
+                    smaller projects other approaches could be easier/better.
+                    Microfrontends are not the solution for every problem
+                    Small projects (too much complexity)
+                    Not many developers
+                    No CD/CI infrastructure (complex build processes / complex integration)
+                </aside>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
