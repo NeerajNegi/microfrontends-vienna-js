@@ -52,6 +52,11 @@
             <aside class="notes">
                 Who has heard about Microfrontends?
                 Who uses microfrontends?
+
+                Either: less than i expected
+                Thoose of you who have allready worked with microfrontends, feel free to share your experiences with me
+                afterwards.
+                Im am very interested in those
             </aside>
         </section>
         <section>
@@ -63,6 +68,12 @@
                 <li>Example</li>
                 <li>Things to consider...</li>
             </ul>
+
+            <aside class="notes">
+                Short explaination what microfrontends are
+                Why do we need microfrontends, advantages
+                present different types of microfrontend architecture
+            </aside>
         </section>
         <section>
             <section>
@@ -71,26 +82,19 @@
                 <p>multiple different approaches</p>
             </section>
             <section>
-                <h2>Server-Side Rendered Microfrontends</h2>
-                <p><a href="https://www.mosaic9.org">Project Mosaic</a></p>
-                <small>developed by Zalando</small>
-                <aside class="notes">
-                    Wont cover server side rendered microfrontends
-                    If you are interested, how to do this look at the Proejct Mosaic from Zalando
-                </aside>
-            </section>
-            <section>
                 <h2>Thoughtworks Technology Radar</h2>
                 <img class="stretch" data-src="resources/thoughtworks-technology-radar.png"></img>
                 <p>
                     <small><a href="https://www.thoughtworks.com/radar/techniques">source</a></small>
                 </p>
                 <aside class="notes">
+                    Currently working on a project where we use some kind of a microfrontend approach.
+                    earlier last year i Started writing my bachelor thesis I wanted to know what different options there
+                    are for frontend SPA
+                    architecture.
+                    Do you know the technology radar?
                     Asessed technologies and rate them.
 
-                    Currently working at a project where we use some kind of a microfrontend approach.
-                    Stated writing my bachelor thesis I wanted to know what different options there are for frontend SPA
-                    architecture.
 
                     Asses November 2016
                     Trial March 2017
@@ -103,18 +107,21 @@
             </section>
             <section>
                 <ul>
-                    <li class="fragment fade-in-then-semi-out">Framework independent - no Framework lock in</li>
-                    <li class="fragment fade-in-then-semi-out">Each microfrontend has its own state</li>
-                    <li class="fragment fade-in-then-semi-out">Independent deployments</li>
-                    <li class="fragment fade-in-then-semi-out">No shared codebase or conflicts</li>
-                    <li class="fragment fade-in-then-semi-out">Time to market</li>
-                    <li class="fragment fade-in-then-semi-out">Cross-functional teams</li>
+                    <li class="fragment fade-in-then-semi-out">framework independent - no Framework lock in</li>
+                    <li class="fragment fade-in-then-semi-out">each microfrontend has its own state</li>
+                    <li class="fragment fade-in-then-semi-out">no tight coupling</li>
+                    <li class="fragment fade-in-then-semi-out">independent deployments</li>
+                    <li class="fragment fade-in-then-semi-out">no shared codebase or conflicts</li>
+                    <li class="fragment fade-in-then-semi-out">time to market</li>
+                    <li class="fragment fade-in-then-semi-out">cross-functional teams</li>
                 </ul>
                 <aside class="notes">
                     Javascript frameworks are not easily interchangeable as they have diverged in capabilities (large
                     projects become inflexible
+                    after a year you realize that a whole feature can be implemented easier using react
                     Each microfrontend has its own state -> immutability each app only knows its own state
-                    Independent deployments
+                    easily interchangeable - more flexibility
+                    Independent deployments -
                     No shared codebase or conflicts
                     Time to market
                 </aside>
@@ -125,9 +132,9 @@
                 <div class="container fragment fade-in">
                     <div class="col">
                         <ul>
-                            <li class="fragment fade-in-then-semi-out">Full control over their features</li>
-                            <li class="fragment fade-in-then-semi-out">Choose the best framework for your needs</li>
-                            <li class="fragment fade-in">Vertical sliced teams</li>
+                            <li class="fragment fade-in-then-semi-out">full control over their features</li>
+                            <li class="fragment fade-in-then-semi-out">choose the best framework for your needs</li>
+                            <li class="fragment fade-in">vertical sliced teams</li>
                         </ul>
                     </div>
                     <div class="col fragment fade-in">
@@ -153,7 +160,7 @@
                     <ul>
                         <li>Iframe approach</li>
                         <li>single-spa framework</li>
-                        <li>Angular Elements</li>
+                        <li>Web Components / Angular Elements</li>
                     </ul>
                 </ul>
                 <aside class="notes">
@@ -166,6 +173,7 @@
                     <li>Framework dependent component library</li>
                 </lu>
                 <aside class="notes">
+
                     each app has a namespace attached state, or seperate state
                     One Framework dependent Component Library (Angular Material)
                 </aside>
@@ -177,7 +185,9 @@
                     <li>DOM is the API</li>
                     <li>Teams can decide which framework to use</li>
                 </ul>
-                <div class="container">
+                <img class="stretch" data-src="resources/multi-framework.png"></img>
+
+                <!--<div class="container">
                     <div class="col">
                         <img height="100px" data-src="resources/angular.png"></img>
                     </div>
@@ -187,7 +197,7 @@
                     <div class="col">
                         <img height="100px" data-src="resources/vue.png"></img>
                     </div>
-                </div>
+                </div>-->
                 <aside class="notes">
                     Iframe approach
                     Single-spa
@@ -199,35 +209,79 @@
                     are difficult.
                 </aside>
             </section>
+            <section>
+                <h2>Iframe approach</h2>
+                <ul>
+                    <li>simple</li>
+                    <li>include apps in iframes</li>
+                    <li>use messages to communicate with parent</li>
+                    <ul>
+                        <li>Window.postMessage</li>
+                        <li>Pym.js</li>
+                    </ul>
+                </ul>
+            </section>
+            <section>
+                <h2>single-spa approach</h2>
+                <ul>
+                    <li>developer by CanopyTax</li>
+                    <li>support for many SPA frameworks</li>
+                    <li>lazy-load applications for improved initial load time</li>
+                </ul>
+                <aside class="notes">
+                    developed by canopytax because they wanted to migrate their angularJs (angular 1) application
+                    React, Angular, AngularJs, Vue, Preact, ember and so on
+                    Single-spa functions as a top level router, that mounts and unmounts the child apps
+                </aside>
+            </section>
+            <section>
+                <h2>Server-Side Rendered Microfrontends</h2>
+                <p><a href="https://www.mosaic9.org">Project Mosaic</a></p>
+                <small>developed by Zalando</small>
+                <aside class="notes">
+                    Wont cover server side rendered microfrontends
+                    If you are interested, how to do this look at the Proejct Mosaic from Zalando
+                </aside>
+            </section>
         </section>
         <section>
             <h1>single-spa Example</h1>
+            <aside class="notes">
+                We will now look at an example using the single-spa framework.
+                We have four different Apps
+                React, angular, vue, angular 1
+                Will show how these can coexist
+            </aside>
         </section>
         <section>
             <section>
                 <h2>Things to consider...</h2>
                 <ul>
-                    <li>Application size overhead</li>
+                    <li>application size overhead</li>
                     <ul>
                         <li>caching</li>
                     </ul>
-                    <li>Makes sense for big projects</li>
+                    <li>makes sense for big projects</li>
                     <li>complex build & integration</li>
                     <li>not the solution for every problem</li>
                 </ul>
                 <aside class="notes">
-                    Application size (Angular 6 + Angular Ivy) overhead
+                    many apps --> Application size (Angular Ivy) overhead
                     Maybe Server-side rendering
                     Caching
                     To battle performance impacts
                     Makes maybe sense for big projects with many developers to split it into vertical slices, but for
                     smaller projects other approaches could be easier/better.
+                    overhead of maintaining and creating seuch a microfrontend architecture is maybe not worthwhile
+                    No CD/CI infrastructure (build pipeline --> complex build processes / complex integration)
                     Microfrontends are not the solution for every problem
-                    Small projects (too much complexity)
-                    Not many developers
-                    No CD/CI infrastructure (complex build processes / complex integration)
                 </aside>
             </section>
+        </section>
+        <section>
+            <h1>Thank you!</h1>
+            <small>Slides & Code @ <a href="https://github.com/twinformatics/microfrontends-vienna-js">https://github.com/twinformatics/microfrontends-vienna-js</a>
+            </small>
         </section>
     </div>
 </div>
