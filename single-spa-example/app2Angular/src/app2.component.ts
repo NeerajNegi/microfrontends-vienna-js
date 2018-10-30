@@ -1,39 +1,40 @@
-import { Component, forwardRef, Inject, OnDestroy } from '@angular/core';
-import { NgRedux } from '@angular-redux/store';
-import { IAppState, CounterActions } from "./store";
-import {Globals} from "./globals.service";
-import * as angularImg from "../assets/angular-logo.png";
+import {Component, forwardRef, Inject, OnDestroy} from '@angular/core';
+import {NgRedux} from '@angular-redux/store';
+import {CounterActions, IAppState} from './store';
+import {Globals} from './globals.service';
+import * as angularImg from '../assets/angular-logo.png';
 
 @Component({
 	selector: 'app2',
 	template: `
-		<div style="margin-top: 100px;">
-            <img [src]="angularImg" style="width: 100px;"/> <br />
-			This was rendered by App2 which is written in Angular 6
-		</div>
-        <br />
-
+<div class="card">
+    <div class="header">
+        <h2>List of items</h2>
+        <img class="header-logo" src="angularImg">
+    </div>
+    <div class="container">
+        This was rendered by App2 which is written in Angular 6
         <div>
-            <b> Count: {{ count }}</b><br/><br/>
-            <button (click)="increment()">local increment</button>&nbsp;Send a <b>local</b> increment event. This will
-            only increase the counter for the current app. <br/>
-            
-            <button (click)="decrement()">local decrement</button>&nbsp;Send a <b>local</b> decrement event. This will
-            only decrement the counter for the current app. <br/>
-
-            
-            <button (click)="globalIncrement()">global increment</button>&nbsp;Send a <b>global</b> increment event.
-            This will increase the counter for the current app and all other apps that listen to this event. <br/>
-            
-            <button (click)="globalDecrement()">global decrement</button>&nbsp;Send a <b>global</b> decrement event.
-            This will increase the counter for the current app and all other apps that listen to this event. <br/>
+        <b> Count: {{ count }}</b><br/><br/>
+        <button (click)="increment()">local increment</button>&nbsp;Send a <b>local</b> increment event. This will
+        only increase the counter for the current app. <br/>
+        
+        <button (click)="decrement()">local decrement</button>&nbsp;Send a <b>local</b> decrement event. This will
+        only decrement the counter for the current app. <br/>
+        
+        
+        <button (click)="globalIncrement()">global increment</button>&nbsp;Send a <b>global</b> increment event.
+        This will increase the counter for the current app and all other apps that listen to this event. <br/>
+        
+        <button (click)="globalDecrement()">global decrement</button>&nbsp;Send a <b>global</b> decrement event.
+        This will increase the counter for the current app and all other apps that listen to this event. <br/>
         </div>
-		
-        <br />
-		<a [routerLink]="['/subroute1']" routerLinkActive="active">Angular route 1</a>&nbsp;
-		<a [routerLink]="['/subroute2']" routerLinkActive="active">Angular route 2</a>
-
-		<router-outlet></router-outlet>
+        <a [routerLink]="['/subroute1']" routerLinkActive="active">Angular route 1</a>&nbsp;
+        <a [routerLink]="['/subroute2']" routerLinkActive="active">Angular route 2</a>
+        
+        <router-outlet></router-outlet>
+    </div>
+</div>
 	`,
 })
 export class App2 {

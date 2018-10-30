@@ -7,7 +7,7 @@ Vue.config.productionTip = false;
 const vueLifecycles = singleSpaVue({
     Vue,
     appOptions: {
-        el: '#app4',
+        el: '#navBar',
         render: h => h(App)
 }
 });
@@ -27,11 +27,11 @@ export const unmount = [
 
 function createDomElement() {
     // Make sure there is a div for us to render into
-    let el = document.getElementById('app4');
+    let el = document.getElementById('navBar');
 
     if (!el) {
         el = document.createElement('div');
-        el.id = 'app4';
+        el.id = 'navBar';
         document.body.appendChild(el);
     }
     return el;
