@@ -1,18 +1,22 @@
 import { createStore } from 'redux';
 
 const initialState = {
-    count: 0
+    elementList: []
 };
 
 function reducer(state = initialState, action) {
     switch(action.type) {
-        case 'INCREMENT':
+        case 'ADD_ITEM':
             return {
-                count: state.count + 1
+                elementList: [...state.elementList, {value: action.payload, completed: false}]
             };
-        case 'DECREMENT':
+        case 'REMOVE_ITEM':
             return {
-                count: state.count - 1
+                elementList: state.elementList.filter(element => element.id !== action.payload)
+            };
+        case 'REMOVE_ALL':
+            return {
+                elementList: []
             };
         default:
             return state;

@@ -25,5 +25,5 @@ export async function loadApp(name, hash, appURL, storeURL, globalEventDistribut
     }
 
     // register the app with singleSPA and pass a reference to the store of the app as well as a reference to the globalEventDistributor
-    singleSpa.registerApplication(name, () => SystemJS.import(appURL), () => true, customProps);
+    singleSpa.registerApplication(name, () => SystemJS.import(appURL), hash ? hashPrefix(hash): () => true, customProps);
 }

@@ -47,12 +47,9 @@ export function unmount(props) {
 
 function createDomElement() {
     // Make sure there is a div for us to render into
-    let el = window.document.getElementById('app2');
-    if (!el) {
-        el = window.document.createElement('app2');
-        el.id = 'app2';
-        window.document.body.appendChild(el);
-    }
+    let el = window.document.getElementById('app2Container');
+        let angularApp = window.document.createElement('app2');
+        el.appendChild(angularApp);
 
-    return el;
+    return angularApp;
 }

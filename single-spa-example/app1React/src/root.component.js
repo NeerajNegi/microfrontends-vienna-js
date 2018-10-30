@@ -1,11 +1,10 @@
 import React from 'react';
 import {Provider, connect} from 'react-redux';
-import Counter from './counter';
+import ElementInput from './element-input';
 import reactLogo from '../assets/react-logo.png'
 
 
 export default class Root extends React.Component {
-
 
     state = {
       store: this.props.store,
@@ -32,7 +31,7 @@ export default class Root extends React.Component {
                         </div>
                         <div className="container">
                                 This was rendered by App1, which is written in React.
-                                <Counter globalEventDistributor={this.state.globalEventDistributor}/>
+                                <ElementInput globalEventDistributor={this.state.globalEventDistributor}/>
                         </div>
                     </div>
 

@@ -7,7 +7,7 @@ import {enableProdMode} from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {APP_BASE_HREF} from "@angular/common";
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
-import { IAppState, CounterActions } from './store';
+import { IAppState, ListActions } from './store';
 import { Globals } from "./globals.service";
 
 const appRoutes: Routes = [
@@ -26,12 +26,10 @@ enableProdMode();
 @NgModule({
 	imports: [
 		BrowserModule,
-		RouterModule.forRoot(appRoutes, {
-			useHash: true
-		}),
+		RouterModule.forRoot(appRoutes),
         NgReduxModule
 	],
-	providers: [{provide: APP_BASE_HREF, useValue: '/app2/'}, CounterActions, Globals],
+	providers: [{provide: APP_BASE_HREF, useValue: '/'}, ListActions, Globals],
 	declarations: [
 		App2,
 		Subroute1,

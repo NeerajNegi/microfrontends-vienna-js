@@ -1,23 +1,6 @@
 <template>
     <div class="navbar">
-        <ul>
-            <a href="#/app1">
-                <li>
-                    App 1 (React)
-                </li>
-            </a>
-            <a href="#/app2">
-                <li>
-                    App 2 (Angular 6)
-                </li>
-            </a>
-            <a href="#/app3">
-                <li>
-                    App 3 (Angular 1)
-                </li>
-            </a>
-
-        </ul>
+        <h2 class="header-title">Very cool list application</h2>
          <img class="logo" src="../assets/logo.png">
     </div>
 </template>
@@ -32,6 +15,11 @@ export default {
 </script>
 
 <style scoped>
+.header-title {
+    width: 100%;
+    text-align: center;
+}
+
 .navbar {
     font-family: Arial, Helvetica, sans-serif;
     position: fixed;
