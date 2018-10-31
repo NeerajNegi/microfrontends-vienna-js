@@ -10,9 +10,15 @@ function reducer(state = initialState, action) {
             return {
                 elementList: [...state.elementList, {value: action.payload, completed: false}]
             };
-        case 'REMOVE_ITEM':
+        case 'FINISH_ITEM':
+            state.elementList[action.payload] = {...state.elementList[action.payload], completed: true};
+            return {elementList: state.elementList};
+        case 'FINISH_ALL':
             return {
-                elementList: state.elementList.filter(element => element.id !== action.payload)
+                elementList: state.elementList.map(item => {
+                    item.completed = true;
+                    return item;
+                })
             };
         case 'REMOVE_ALL':
             return {

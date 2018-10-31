@@ -16,20 +16,20 @@ import {Globals} from './globals.service';
                     This was rendered by App2 which is written in Angular 6
                 </p>
 
-                Items in list TODO: <strong>{{list.length}}</strong> & FINISHED: <strong>{{list.length}}</strong>
+                Items in list TODO: <strong>{{list.length - getFinsihedTasksCount()}}</strong> & FINISHED: <strong>{{getFinsihedTasksCount()}}</strong>
                 <ng-container *ngFor="let item of list; let i = index">
                     <div *ngIf="!item.completed">
                     <span style="width: 100px">
                     {{item.value}}
                     </span>
                         <span>
-                        <button (click)="removeOne(i)">Finished!</button>
+                        <button (click)="finishOne(i)">Finished!</button>
                     </span>
                     </div>
                 </ng-container>
                 <br>
                 <br>
-                <button (click)="removeAll()">Finish all</button>
+                <button (click)="finishAll()">Finish all</button><button (click)="removeAll()">Remove all</button>
                 <br/>
 
                 <a [routerLink]="['/subroute1']" routerLinkActive="active">Angular route 1</a>&nbsp;
@@ -57,16 +57,24 @@ export class App2 {
         this.subscription.unsubscribe();
     }
 
-    removeOne(elementId) {
-        this.globals.globalEventDistributor.dispatch(this.actions.removeItem(elementId));
+    finishOne(elementId) {
+        this.globals.globalEventDistributor.dispatch(this.actions.finishItem(elementId));
+    }
+
+    finishAll() {
+        this.globals.globalEventDistributor.dispatch(this.actions.finishAll());
     }
 
     removeAll() {
         this.globals.globalEventDistributor.dispatch(this.actions.removeAll());
     }
 
-    private updateList(value: any[]) {
+    updateList(value: any[]) {
         console.log(value);
         this.list = value;
+    }
+
+    getFinsihedTasksCount(){
+        return this.list.filter(item => item.completed).length;
     }
 }

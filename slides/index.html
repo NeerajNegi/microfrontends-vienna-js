@@ -46,6 +46,10 @@
             background-repeat: no-repeat;
             background-size: 7%;
         }
+
+        .qrcode{
+            height: 200px;
+        }
     </style>
 </head>
 <body>
@@ -62,7 +66,7 @@
 
             <aside class="notes">
                 <ul>
-                    <li>Who has heard about Microfrontends?</li>
+                    <li>Who has heard about Micro frontends?</li>
                     <li>Who uses microfrontends?</li>
                     <li>Either: less than i expected</li>
                     <li>Thoose of you who have allready worked with microfrontends, feel free to share your experiences
@@ -75,11 +79,11 @@
         <section data-state="small-tf">
             <h2>Overview</h2>
             <ul>
-                <li>What are Microfrontends</li>
-                <li>Why do we need Microfrontends</li>
-                <li>Different types of Microfrontend architecture</li>
-                <li>Example</li>
-                <li>Things to consider...</li>
+                <li>what are micro frontends</li>
+                <li>why do we need micro frontends</li>
+                <li>different types of micro frontend architecture</li>
+                <li>example</li>
+                <li>things to consider...</li>
             </ul>
 
             <aside class="notes">
@@ -97,7 +101,7 @@
         </section>
         <section data-state="small-tf">
             <section>
-                <h2>Microfrontend</h2>
+                <h2>Micro frontend</h2>
                 <p>break down frontend monolith into features</p>
                 <p>multiple different approaches</p>
                 <aside class="notes">
@@ -122,12 +126,12 @@
         </section>
         <section data-state="small-tf">
             <section>
-                <h2>Why are Microfrontends usefull </h2>
+                <h2>Why are Micro frontends usefull </h2>
             </section>
             <section>
                 <ul>
                     <li class="fragment fade-in-then-semi-out">framework independent - no Framework lock in</li>
-                    <li class="fragment fade-in-then-semi-out">each microfrontend has its own state</li>
+                    <li class="fragment fade-in-then-semi-out">each micro frontend has its own state</li>
                     <li class="fragment fade-in-then-semi-out">no tight coupling</li>
                     <li class="fragment fade-in-then-semi-out">independent deployments</li>
                     <li class="fragment fade-in-then-semi-out">no shared codebase or conflicts</li>
@@ -180,7 +184,7 @@
         </section>
         <section data-state="small-tf">
             <section>
-                <h2>Microfrontend Architecture approaches</h2>
+                <h2>Micro frontend Architecture approaches</h2>
                 <p>Thin global application layer</p>
                 <ul>
                     <li>single framework</li>
@@ -188,7 +192,7 @@
                     <ul>
                         <li>Iframe approach</li>
                         <li>single-spa framework</li>
-                        <li>Web Components / Angular Elements</li>
+                        <li>Webcomponents / Angular Elements</li>
                     </ul>
                 </ul>
                 <aside class="notes">
@@ -196,9 +200,10 @@
             </section>
             <section>
                 <h2>Single Framework</h2>
+                <br>
                 <lu>
-                    <li>Namespace attached state</li>
-                    <li>Framework dependent component library</li>
+                    <li>namespace attached state</li>
+                    <li>framework dependent component library</li>
                 </lu>
                 <aside class="notes">
                     <ul>
@@ -213,30 +218,19 @@
             <section>
                 <h2>Multiple Frameworks</h2>
                 <ul>
-                    <li>Webcomponent component library</li>
+                    <li>webcomponent component library</li>
                     <li>DOM is the API</li>
-                    <li>Teams can decide which framework to use</li>
+                    <li>teams can decide which framework to use</li>
                 </ul>
                 <img class="stretch" data-src="resources/multi-framework.png"></img>
-                <!--<div class="container">
-                    <div class="col">
-                        <img height="100px" data-src="resources/angular.png"></img>
-                    </div>
-                    <div class="col">
-                        <img height="100px" data-src="resources/react.png"></img>
-                    </div>
-                    <div class="col">
-                        <img height="100px" data-src="resources/vue.png"></img>
-                    </div>
-                </div>-->
                 <aside class="notes">
                     <ul>
                         <li>Iframe approach</li>
                         <li>Single-spa</li>
                         <li>React + Angular Elements</li>
-                        <li>Component Library written as Webcomponents (works with any framework)</li>
+                        <li>component Library written as webcomponents (works with any framework)</li>
                         <li>DOM is the API to communicate with other micro frontends</li>
-                        <li>Each team has the choice to use the technology that best fits their needs, flexibility,</li>
+                        <li>each team has the choice to use the technology that best fits their needs, flexibility,</li>
                         <li>Angular zone.js problems because of global window object pollution --> multiple versions of
                             Angular are difficult.
                         </li>
@@ -280,7 +274,7 @@
                 </aside>
             </section>
             <section>
-                <h2>Server-Side Rendered Microfrontends</h2>
+                <h2>Server-Side Rendered Micro frontends</h2>
                 <p><a href="https://www.mosaic9.org">Project Mosaic</a></p>
                 <small>developed by Zalando</small>
                 <aside class="notes">
@@ -307,6 +301,7 @@
                     <li>application size overhead</li>
                     <ul>
                         <li>caching</li>
+                        <li>server-side rendering</li>
                     </ul>
                     <li>makes sense for big projects</li>
                     <li>complex build & integration</li>
@@ -327,7 +322,7 @@
                         </li>
                         <li>No CD/CI infrastructure (build pipeline --> complex build processes / complex integration)
                         </li>
-                        <li>Microfrontends are not the solution for every problem</li>
+                        <li>Micro frontends are not the solution for every problem</li>
                     </ul>
                 </aside>
             </section>
@@ -353,6 +348,7 @@
             <h1>Thank you!</h1>
             <small>Slides & Code @ <a href="https://github.com/twinformatics/microfrontends-vienna-js">https://github.com/twinformatics/microfrontends-vienna-js</a>
             </small>
+            <img data-src="resources/qrcode.png" class="qrcode">
         </section>
     </div>
 </div>
