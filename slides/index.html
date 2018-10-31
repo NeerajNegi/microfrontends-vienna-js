@@ -66,6 +66,8 @@
 
             <aside class="notes">
                 <ul>
+                    <li>developer at twinformatics</li>
+                    <li>for the insurance companies: wiener staedtische, Donau and the vienna insurance group</li>
                     <li>Who has heard about Micro frontends?</li>
                     <li>Who uses microfrontends?</li>
                     <li>Either: less than i expected</li>
@@ -91,11 +93,7 @@
                     <li>Short explaination what microfrontends are</li>
                     <li>Why do we need microfrontends, advantages</li>
                     <li>present different types of microfrontend architecture</li>
-                    <li>
-                        Currently working on a project where we use some kind of a microfrontend approach.
-                        earlier last year i Started writing my bachelor thesis I wanted to know what different options
-                        there are for frontend SPA architecture.
-                    </li>
+
                 </ul>
             </aside>
         </section>
@@ -105,6 +103,10 @@
                 <p>break down frontend monolith into features</p>
                 <p>multiple different approaches</p>
                 <aside class="notes">
+                    <ul>
+                        <li>one bounded-context from a business point of view</li>
+                    </ul>
+
                     Currently working on a project where we use some kind of a microfrontend approach.
                     earlier last year i Started writing my bachelor thesis I wanted to know what different options
                     there are for frontend SPA architecture.
@@ -144,12 +146,12 @@
                             --> large projects become inflexible
                         </li>
                         <li>after a year you realize that a whole feature can be implemented easier using react</li>
-                        <li>Each microfrontend has its own state -> immutability each app only knows its own state</li>
+                        <li>Each microfrontend has its own state -> each app only knows its own state, can decide what to publish with other apps -> encapsulation</li>
                         <li>easily interchangeable - more flexibility</li>
                         <li>Independent deployments - each team can decide when to release / redeploy without any
                             dependencies on other teams
                         </li>
-                        <li>use feature flags for features that have dependencies</li>
+                        <li>use feature flags for features that have dependencies, wont cover for the sake time</li>
                         <li>No shared codebase or conflicts</li>
                         <li>leading to faster Time to market</li>
                     </ul>
@@ -196,6 +198,12 @@
                     </ul>
                 </ul>
                 <aside class="notes">
+                    <ul>
+                        <li>consolidates microfrontends</li>
+                        <li>provides a possibility to communicate with other child apps</li>
+                        <li>cpasulate each microfrontend within a webcomponent and use these</li>
+                        <li>Angular Elements </li>
+                    </ul>
                 </aside>
             </section>
             <section>
@@ -210,6 +218,7 @@
                         <li>multiple approaches, easier than multi framework</li>
                         <li>Teams create libraries and integrate into main app</li>
                         <li>each app has a namespace attached state, or seperate state</li>
+                        <li>nothing that could ruin user experience quicker than a frontend with 10 different styles </li>
                         <li>One Framework dependent Component Library (Angular Material)</li>
                         <li>all multi framework approaches can of course be used with only a single framework</li>
                     </ul>
